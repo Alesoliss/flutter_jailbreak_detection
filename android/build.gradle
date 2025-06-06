@@ -28,6 +28,8 @@ apply plugin: 'kotlin-android'
 android {
     compileSdkVersion 33
 
+    namespace 'com.example.flutter_jailbreak_detection'
+
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
@@ -40,3 +42,10 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'com.github.scottyab:rootbeer:0.1.0'
 }
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
